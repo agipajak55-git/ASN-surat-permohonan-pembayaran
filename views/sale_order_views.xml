@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_inherit_surat_permohonan_asn" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.surat.permohonan.asn</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="tanggal_print"/>
+            </xpath>
+            <xpath expr="//field[@name='client_order_ref']" position="after">
+                <field name="dasar_pekerjaan"/>
+                <field name="nomor_dasar_pekerjaan"/>
+                <field name="tgl_dasar_pekerjaan"/>
+                <field name="jenis_pekerjaan" placeholder="misal: Pengadaan Computer Supplies"/>
+                <field name="lampirkan_faktur_pajak"/>
+                <field name="pakai_meterai"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
