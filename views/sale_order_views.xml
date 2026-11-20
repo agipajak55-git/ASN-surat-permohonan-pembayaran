@@ -5,9 +5,6 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='payment_term_id']" position="after">
-                <field name="tanggal_print"/>
-            </xpath>
             <xpath expr="//field[@name='client_order_ref']" position="after">
                 <field name="dasar_pekerjaan"/>
                 <field name="nomor_dasar_pekerjaan"/>
@@ -15,6 +12,9 @@
                 <field name="jenis_pekerjaan" placeholder="misal: Pengadaan Computer Supplies"/>
                 <field name="lampirkan_faktur_pajak"/>
                 <field name="pakai_meterai"/>
+                <field name="penandatangan_surat"/>
+                <field name="nama_penandatangan" attrs="{'invisible': [('penandatangan_surat', '!=', 'custom')], 'required': [('penandatangan_surat', '=', 'custom')]}" placeholder="Ketik nama penandatangan"/>
+                <field name="jabatan_penandatangan" attrs="{'invisible': [('penandatangan_surat', '!=', 'custom')], 'required': [('penandatangan_surat', '=', 'custom')]}" placeholder="misal: Direktur, Finance, Manager"/>
             </xpath>
         </field>
     </record>

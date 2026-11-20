@@ -1,13 +1,18 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Surat Permohonan Pembayaran Sales Order (ASN)',
-    'version': '16.0.1.0.0',
+    'version': '16.0.1.2.0',
     'category': 'Sales/Sales',
     'summary': 'Cetak Surat Permohonan Pembayaran PT. AGI SOLUSI NEGERI dari Sales Order (Odoo 16 Community)',
     'description': """
 Module Konversi Generator Surat Permohonan Pembayaran ke Odoo 16 Community - PT. AGI SOLUSI NEGERI
 ===================================================================================================
-Fitur:
+Revisi 16.0.1.2.0:
+- Penyesuaian nama Bank Mandiri - KCP Solo Pasar Legi menggunakan karakter strip standar (-) agar tidak menjadi simbol tidak terbaca (â€“).
+- Pilihan penandatangan surat & jabatan dinamis pada Sales Order:
+  * Anton Wijaya - Direktur
+  * Agung Jayadi - Finance
+  * Pilihan Custom: dapat mengisi nama & jabatan penandatangan lain secara manual.
 - Mengambil tanggal surat & nomor surat (bulan romawi & tahun) dari field 'Tanggal Print' (tanggal_print).
   Jika tanggal_print kosong, otomatis fallback ke tanggal hari ini.
 - Lampiran Faktur Pajak bersifat opsional via checkbox 'Lampirkan Faktur Pajak' pada Sales Order:
@@ -16,7 +21,6 @@ Fitur:
 - Checkbox 'Pakai Meterai': mengatur jarak tanda tangan 30mm (pakai meterai) atau 10mm (tanpa meterai).
 - Penomoran otomatis format: [nomor SO]/Perm.Bayar/ASN/[bulan romawi]/[tahun]
 - Terbilang otomatis Bahasa Indonesia (Rupiah).
-- Rincian Bank Mandiri KCP Solo Pasar Legi ASN (138 00 5830000 0), tata letak presisi sesuai kop surat & generator HTML.
     """,
     'author': 'PT. AGI SOLUSI NEGERI',
     'website': 'https://www.astongraphindo.com',
